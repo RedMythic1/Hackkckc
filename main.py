@@ -67,7 +67,7 @@ while running:
         pygame.display.update()
         if trashY>=525:
           print('You lost. Try again by running the programing.')
-          running==False
+          pygame.quit
     for loop in range(100):
         trashY += .03
         screen.blit(trash, (trashX, trashY))
