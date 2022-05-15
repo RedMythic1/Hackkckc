@@ -83,26 +83,26 @@ while running:
         trashX=random.randint(playerX+50, 300)
         trashY=random.randint(0,250)
         screen.blit(trash, (trashX, trashY))
-    if score == 5:
-        current_weapon = 'picker'
-    elif score == 10:
-        current_weapon = 'claw'
-    elif score == 20:
-        current_weapon = 'truck'
-    if current_weapon == 'fist':
-        score = score + 1
-    elif current_weapon == 'picker':
-        score = score + 5
-    elif current_weapon == 'claw':
-        score = score + 10
-    elif current_weapon == 'truck':
-        score = score + 20
-    if score == 200:
-        print("You have achieved fast collector!")
-    if score == 500:
-        print("You have achieved greatest collector!")
-    if score == 1000:
-        print("You have achieved master collector!")
+if score == 5:
+    current_weapon = 'picker'
+elif score == 10:
+    current_weapon = 'claw'
+elif score == 20:
+    current_weapon = 'truck'
+if current_weapon == 'fist':
+    score = score + 1
+elif current_weapon == 'picker':
+    score = score + 5
+elif current_weapon == 'claw':
+    score = score + 10
+elif current_weapon == 'truck':
+    score = score + 20
+if score == 200:
+    print("You have achieved fast collector!")
+if score == 500:
+    print("You have achieved greatest collector!")
+if score == 1000:
+    print("You have achieved master collector!")
 
     grass()
     player()
