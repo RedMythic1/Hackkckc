@@ -56,20 +56,20 @@ while running:
         player()
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_a:
-                playerX_change = -1
+                playerX_change = -3
             if event.key == pygame.K_d:
-                playerX_change = 1
+                playerX_change = 3
         if event.type == pygame.KEYUP:
             if event.key == pygame.K_a or event.key == pygame.K_d:
                 playerX_change = 0
         grass()
         player()
         pygame.display.update()
-        if trashY>=550:
+        if trashY>=525:
           print("you have lost")
           running==False
     for loop in range(100):
-        trashY += .05
+        trashY += .03
         screen.blit(trash, (trashX, trashY))
     playerX += playerX_change
     if playerX <= 0:
@@ -80,7 +80,7 @@ while running:
         score += 1
         print('You have collected the trash.')
         print(f"{score}")
-        trashX=random.randint(100, 250)
+        trashX=random.randint(playerX+75, 500)
         trashY=random.randint(0,250)
         screen.blit(trash, (trashX, trashY))
     grass()
