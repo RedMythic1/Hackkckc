@@ -31,11 +31,7 @@ global score
 score = 0
 current_weapon = 'fist'
 
-def __init__(self):
-    self.rect = playerImg.Rect(32, 32, 16, 16)
-    if self.rect.colliderect(trash.rect):
-        score += 1
-        print('You have collected the trash.')
+
 
 
 def grass():
@@ -71,7 +67,7 @@ while running:
         pygame.display.update()
         if trashY>=500:
           print("you have lost")
-          break
+          running==False
     for loop in range(100):
         trashY += .01
         screen.blit(trash, (trashX, trashY))
@@ -80,14 +76,12 @@ while running:
         playerX = 0
     elif playerX >= 736:
         playerX = 736
-    if playerX-15<trashX<playerX+15 and playerY-15<trashY<playerY+15:
+    if playerX-50<trashX<playerX+50 and playerY-50<trashY<playerY+50:
       score += 1
       print('You have collected the trash.')
       print(f"{score}")
-      trashX=random.randint(50, 100)
-      trashY=random.randint(0,400)
-      trashY=randY
-      trashX=randX
+      trashX=random.randint(playerX+50, 300)
+      trashY=random.randint(0,250)
       screen.blit(trash, (trashX, trashY))
     if score == 5:
         current_weapon = 'picker'
