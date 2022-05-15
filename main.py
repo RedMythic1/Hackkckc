@@ -80,7 +80,7 @@ while running:
         score += 1
         print('You have collected the trash.')
         print(f"{score}")
-        trashX=random.randint(playerX+75, 500)
+        trashX=random.randint(0, 500)
         trashY=random.randint(0,250)
         screen.blit(trash, (trashX, trashY))
     grass()
