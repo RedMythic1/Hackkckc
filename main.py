@@ -65,7 +65,7 @@ while running:
         grass()
         player()
         pygame.display.update()
-        if trashY>=500:
+        if trashY>=550:
           print("you have lost")
           running==False
     for loop in range(100):
@@ -76,13 +76,13 @@ while running:
         playerX = 0
     elif playerX >= 736:
         playerX = 736
-    if playerX-50<trashX<playerX+50 and playerY-50<trashY<playerY+50:
-      score += 1
-      print('You have collected the trash.')
-      print(f"{score}")
-      trashX=random.randint(playerX+50, 300)
-      trashY=random.randint(0,250)
-      screen.blit(trash, (trashX, trashY))
+      if playerX-50<trashX<playerX+50 and playerY-50<trashY<playerY+50:
+        score += 1
+        print('You have collected the trash.')
+        print(f"{score}")
+        trashX=random.randint(playerX+50, 300)
+        trashY=random.randint(0,250)
+        screen.blit(trash, (trashX, trashY))
     if score == 5:
         current_weapon = 'picker'
     elif score == 10:
