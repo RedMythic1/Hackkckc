@@ -1,4 +1,4 @@
-##Team Members: Udayan, Dhariya, Avneh, Arushthecow
+##Team Members: Arush, Udayan, Avneh, Dhairya
 import pygame
 import math
 import random
@@ -69,41 +69,20 @@ while running:
           print("you have lost")
           running==False
     for loop in range(100):
-        trashY += .01
+        trashY += .005
         screen.blit(trash, (trashX, trashY))
     playerX += playerX_change
     if playerX <= 0:
         playerX = 0
     elif playerX >= 736:
         playerX = 736
-      if playerX-50<trashX<playerX+50 and playerY-50<trashY<playerY+50:
+    if playerX-50<trashX<playerX+50 and playerY-50<trashY<playerY+50:
         score += 1
         print('You have collected the trash.')
         print(f"{score}")
-        trashX=random.randint(playerX+50, 300)
+        trashX=random.randint(100, 250)
         trashY=random.randint(0,250)
         screen.blit(trash, (trashX, trashY))
-if score == 5:
-    current_weapon = 'picker'
-elif score == 10:
-    current_weapon = 'claw'
-elif score == 20:
-    current_weapon = 'truck'
-if current_weapon == 'fist':
-    score = score + 1
-elif current_weapon == 'picker':
-    score = score + 5
-elif current_weapon == 'claw':
-    score = score + 10
-elif current_weapon == 'truck':
-    score = score + 20
-if score == 200:
-    print("You have achieved fast collector!")
-if score == 500:
-    print("You have achieved greatest collector!")
-if score == 1000:
-    print("You have achieved master collector!")
-
     grass()
     player()
     enemy()
