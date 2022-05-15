@@ -56,9 +56,9 @@ while running:
         player()
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_a:
-                playerX_change = -3
+                playerX_change = -4
             if event.key == pygame.K_d:
-                playerX_change = 3
+                playerX_change = 4
         if event.type == pygame.KEYUP:
             if event.key == pygame.K_a or event.key == pygame.K_d:
                 playerX_change = 0
@@ -66,7 +66,7 @@ while running:
         player()
         pygame.display.update()
         if trashY>=525:
-          print("you have lost")
+          print('You lost. Try again by running the programing.')
           running==False
     for loop in range(100):
         trashY += .03
