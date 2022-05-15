@@ -56,9 +56,9 @@ while running:
         player()
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_a:
-                playerX_change = -5
+                playerX_change = -1
             if event.key == pygame.K_d:
-                playerX_change = 5
+                playerX_change = 1
         if event.type == pygame.KEYUP:
             if event.key == pygame.K_a or event.key == pygame.K_d:
                 playerX_change = 0
@@ -69,7 +69,7 @@ while running:
           print("you have lost")
           running==False
     for loop in range(100):
-        trashY += .005
+        trashY += .05
         screen.blit(trash, (trashX, trashY))
     playerX += playerX_change
     if playerX <= 0:
