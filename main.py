@@ -80,7 +80,7 @@ while running:
         playerX = 0
     elif playerX >= 736:
         playerX = 736
-    if playerX==trashX and playerY==trashY:
+    if playerX-15<trashX<playerX+15 and playerY-15<trashY<playerY+15:
       score += 1
       print('You have collected the trash.')
       print(f"{score}")
